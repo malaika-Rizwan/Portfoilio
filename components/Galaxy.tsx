@@ -1,6 +1,6 @@
 "use client";
 
-import { Renderer, Program, Mesh, Geometry } from "ogl";
+import { Renderer, Program, Mesh, Geometry, type OGLRenderingContext } from "ogl";
 import { useEffect, useRef } from "react";
 import "./Galaxy.css";
 
@@ -173,7 +173,7 @@ void main() {
 `;
 
 // Full-screen triangle for shader pass (covers NDC)
-function createFullscreenTriangle(gl: WebGLRenderingContext) {
+function createFullscreenTriangle(gl: OGLRenderingContext) {
   return new Geometry(gl, {
     position: {
       size: 2,
