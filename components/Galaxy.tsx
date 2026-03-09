@@ -173,7 +173,8 @@ void main() {
 `;
 
 // Full-screen triangle for shader pass (covers NDC)
-function createFullscreenTriangle(gl: OGLRenderingContext) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function createFullscreenTriangle(gl: any) {
   return new Geometry(gl, {
     position: {
       size: 2,
