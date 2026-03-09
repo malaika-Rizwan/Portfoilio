@@ -173,9 +173,10 @@ void main() {
 `;
 
 // Full-screen triangle for shader pass (covers NDC)
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function createFullscreenTriangle(gl: any) {
-  return new Geometry(gl, {
+function createFullscreenTriangle(
+  gl: WebGLRenderingContext | WebGL2RenderingContext | OGLRenderingContext
+) {
+  return new Geometry(gl as OGLRenderingContext, {
     position: {
       size: 2,
       data: new Float32Array([-1, -1, 3, -1, -1, 3]),
