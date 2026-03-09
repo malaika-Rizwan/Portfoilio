@@ -54,7 +54,7 @@ export default function Navbar() {
       if (target) {
         if (lenisRef.current && typeof lenisRef.current.scrollTo === "function") {
           e.preventDefault();
-          (lenisRef.current as { scrollTo: (el: Element, opts?: object) => void }).scrollTo(target, { lerp: 0.08, duration: 1.2 });
+          (lenisRef.current as unknown as { scrollTo: (el: Element, opts?: object) => void }).scrollTo(target, { lerp: 0.08, duration: 1.2 });
         }
       }
       setMobileOpen(false);

@@ -125,11 +125,11 @@ export default function ProjectsSection() {
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                 {project.title}
               </h3>
-              {"frontendOnlyNote" in project && project.frontendOnlyNote && (
+              {project.title === "Job Portal" && "frontendOnlyNote" in project && (project as { frontendOnlyNote?: string }).frontendOnlyNote ? (
                 <p className="text-amber-400/90 text-sm font-medium mb-3">
-                  {project.frontendOnlyNote}
+                  {(project as { frontendOnlyNote: string }).frontendOnlyNote}
                 </p>
-              )}
+              ) : null}
               <p className="text-gray-400 text-base mb-6">
                 {project.description}
               </p>

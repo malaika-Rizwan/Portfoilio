@@ -173,10 +173,8 @@ void main() {
 `;
 
 // Full-screen triangle for shader pass (covers NDC)
-function createFullscreenTriangle(
-  gl: WebGLRenderingContext | WebGL2RenderingContext | OGLRenderingContext
-) {
-  return new Geometry(gl as OGLRenderingContext, {
+function createFullscreenTriangle(gl: WebGLRenderingContext | WebGL2RenderingContext) {
+  return new Geometry(gl as unknown as OGLRenderingContext, {
     position: {
       size: 2,
       data: new Float32Array([-1, -1, 3, -1, -1, 3]),

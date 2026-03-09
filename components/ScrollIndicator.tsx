@@ -41,8 +41,8 @@ export default function ScrollIndicator() {
       const target = id ? document.getElementById(id) : null;
       if (target) {
         e.preventDefault();
-        if (lenisRef.current && typeof (lenisRef.current as { scrollTo?: (el: Element, o?: object) => void }).scrollTo === "function") {
-          (lenisRef.current as { scrollTo: (el: Element, opts?: object) => void }).scrollTo(target, { lerp: 0.08, duration: 1.2 });
+        if (lenisRef.current && typeof (lenisRef.current as unknown as { scrollTo?: (el: Element, o?: object) => void }).scrollTo === "function") {
+          (lenisRef.current as unknown as { scrollTo: (el: Element, opts?: object) => void }).scrollTo(target, { lerp: 0.08, duration: 1.2 });
         } else {
           target.scrollIntoView({ behavior: "smooth" });
         }
@@ -55,8 +55,8 @@ export default function ScrollIndicator() {
     (e: React.MouseEvent) => {
       e.preventDefault();
       const home = document.getElementById("home");
-      if (home && lenisRef.current && typeof (lenisRef.current as { scrollTo?: (el: Element, o?: object) => void }).scrollTo === "function") {
-        (lenisRef.current as { scrollTo: (el: Element, opts?: object) => void }).scrollTo(home, { lerp: 0.08, duration: 1.2 });
+      if (home && lenisRef.current && typeof (lenisRef.current as unknown as { scrollTo?: (el: Element, o?: object) => void }).scrollTo === "function") {
+        (lenisRef.current as unknown as { scrollTo: (el: Element, opts?: object) => void }).scrollTo(home, { lerp: 0.08, duration: 1.2 });
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }

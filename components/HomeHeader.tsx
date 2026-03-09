@@ -11,8 +11,8 @@ export default function HomeHeader() {
     e.preventDefault();
     const target = document.getElementById("contact");
     if (target) {
-      if (lenisRef.current && typeof (lenisRef.current as { scrollTo: (el: Element, o?: object) => void }).scrollTo === "function") {
-        (lenisRef.current as { scrollTo: (el: Element, o?: object) => void }).scrollTo(target, { lerp: 0.06, duration: 1.4 });
+      if (lenisRef.current && typeof (lenisRef.current as unknown as { scrollTo: (el: Element, o?: object) => void }).scrollTo === "function") {
+        (lenisRef.current as unknown as { scrollTo: (el: Element, o?: object) => void }).scrollTo(target, { lerp: 0.06, duration: 1.4 });
       } else {
         target.scrollIntoView({ behavior: "smooth" });
       }

@@ -134,7 +134,7 @@ function OrbitItem({
         offsetRotate: "0deg",
         offsetAnchor: "center center",
         offsetDistance,
-      } as React.CSSProperties}
+      } as unknown as React.CSSProperties}
     >
       <div style={{ transform: `rotate(${-rotation}deg)` }}>{item}</div>
     </motion.div>
