@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  @apply text-gray-100 antialiased;
+}
+
+/* Custom selection */
+::selection {
+  @apply bg-white/20 text-white;
+}
+
+/* Scrollbar: white, no blue */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Featured Projects: scrollbar always visible beneath content */
+.featured-projects-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.featured-projects-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.featured-projects-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  margin-top: 4px;
+}
+
+/* Horizontal scroll section: snap + scrollbar beneath */
+.projects-horizontal-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-horizontal-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.projects-horizontal-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+}
+
+.projects-horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+
+.projects-horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent;
+}
+
+/* Resume: hide site header and GitHub corner when printing */
+@media print {
+  body {
+    background: #fff !important;
+  }
+  header,
+  [aria-label="GitHub profile"] {
+    display: none !important;
+  }
+}
